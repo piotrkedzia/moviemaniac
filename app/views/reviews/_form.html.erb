@@ -1,0 +1,24 @@
+<%= render 'shared/errors', object: @review %>
+<fieldset>
+  <ol>
+    <%= form_for([@movie, @review]) do |f| %>
+      <li class="required">
+        <%= f.label :name %><br/>
+        <%= f.text_field :name %>
+      </li>
+      <li class="required stars">
+        <%= f.label :stars %>
+        <% Review::STARS.each do |star| %>
+          <span class="star">
+            <%= f.radio_button :stars, star %> <%= star %>
+          </span>
+        <% end %>
+      </li>
+      <li class="required"> 
+        <%=f.label :comment  %><br/>
+        <%= f.text_field :comment, size: 50 %>
+      </li><br/>
+      <%= f.submit %>
+    <% end %>
+  </ol>
+</fieldset>
