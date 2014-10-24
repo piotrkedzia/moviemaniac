@@ -1,9 +1,10 @@
 <ul id="movies">
   <% @movies.each do |movie| %>
     <li>
+      <div>
       <article class="movie">
         <header>
-          <%= image_for(movie) %>
+          <%= image_for(movie,:thumb) %>
           <h2><%= link_to movie.title, movie %>(<%= movie.released_on.year %>)</h2>
           <p> <%=link_to(pluralize(movie.reviews.size,"review"),movie_reviews_path(movie)) %></p> 
           <h3><%= movie.cast %></h3>
@@ -32,6 +33,7 @@
         <footer>
         </footer>
       </article>
+    </div>
     </li>
   <% end %>
 </ul>
