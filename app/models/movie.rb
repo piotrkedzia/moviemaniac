@@ -12,9 +12,9 @@ class Movie < ActiveRecord::Base
   #has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>"  }, :default_url => "/images/:style/missing.png"
   has_attached_file :image, :styles => { :medium => "400x400>", :thumb => "200x200>" }
   validates_attachment :image,
-    :content_type => { :content_type =>['image/jpeg','image/png'] },
-    :size => { :less_than => 1.megabyte }
-
+    :content_type => { :content_type => ['image/jpeg', 'image/png']  },
+    :size => { :less_than => 1.megabyte  }
+    
   def self.released
     where("released_on <= ?", Time.now).order("released_on desc")
   end
