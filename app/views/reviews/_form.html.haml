@@ -1,0 +1,20 @@
+= render 'shared/errors', object: @review
+%fieldset
+  %ol
+    = form_for([@movie, @review]) do |f|
+      %li.required
+        = f.label :name
+        %br/
+        = f.text_field :name
+      %li.required.stars
+        = f.label :stars
+        - Review::STARS.each do |star|
+          %span.star
+            = f.radio_button :stars, star
+            = star
+      %li.required
+        = f.label :comment
+        %br/
+        = f.text_field :comment, size: 50
+      %br/
+      = f.submit

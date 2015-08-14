@@ -1,0 +1,39 @@
+%body
+  %article#movie.movie
+    %header
+      = image_for(@movie,:medium)
+      %h1= @movie.title
+      %h2
+        Released: #{@movie.released_on}
+    %p
+      = @movie.description
+    %h3.no-rule
+      = @movie.rating
+      • #{@movie.duration}
+    %h3 Cast
+    %p
+      = @movie.cast
+    %h3 Director
+    %p
+      = @movie.director
+    %h3 Total Gross
+    %p
+      = format_total_gross(@movie)
+    %h3 Average review
+    %p
+      = format_average_stars(@movie)
+    %p
+    %h3 Recent reviews
+    %ol#reviews
+      - @movie.recent_reviews.each do |review|
+        %li
+          #{content_tag(:strong, review.name)}: #{review.comment}
+    %p
+      Read all #{link_to pluralize(@movie.reviews.size,'review'), movie_reviews_path(@movie)}
+    %footer
+      %nav
+        = link_to 'Edit', edit_movie_path(@movie), class: 'button'
+        = link_to 'Delete', @movie,                                           |
+          class: 'button',method: :delete, data: { confirm: 'Are you sure?' } |
+        %p
+          = link_to 'Write Review', new_movie_review_path(@movie),class: 'button ok review'
