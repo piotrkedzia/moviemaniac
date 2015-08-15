@@ -12,3 +12,5 @@
         = link_to("Delete ", movie_review_path(@movie,review), method: :delete,  data:{confirm: "Are You sure?"})
         %br
         = "#{review.comment} (#{time_ago_in_words(review.created_at)})"
+
+

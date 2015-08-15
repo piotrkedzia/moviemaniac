@@ -29,6 +29,10 @@ gem 'paperclip'
 gem 'aws-sdk'
 
 gem 'haml-rails'
+gem 'pry'
+gem 'pry-rails'
+gem 'pry-byebug'
+gem 'devise'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

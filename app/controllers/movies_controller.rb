@@ -38,7 +38,7 @@ class MoviesController < ApplicationController
   def destroy
     @movie = Movie.find(params[:id])
     @movie.destroy
-    redirect_to movies_url, danger:"Movie was permanently deleated!!!"
+    redirect_to movies_path, danger:"Movie was permanently deleated!!!"
   end
 
   private
