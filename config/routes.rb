@@ -6,4 +6,6 @@ Flix::Application.routes.draw do
   resources :movies do
     resources :reviews
   end
+
+  get "/all_favorites", to: "favorites#all"
 end

@@ -1,0 +1,12 @@
+%h1 All users favorites
+
+%table.table
+  %tbody
+    %tr
+      %th Title
+      %th User
+    - @favorites.each do |favorite|
+      %tr
+        %td= favorite.title
+        %td= favorite.user.email
+
