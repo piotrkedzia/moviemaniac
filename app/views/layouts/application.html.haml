@@ -8,11 +8,12 @@
     = csrf_meta_tags
   %body
     = render "layouts/header"
-    #wrapper
-      = render "layouts/flashes"
-      #container
-        %section#sidebar
-          = render "layouts/sidebar"
-        %section#content
-          = yield
+    .container
+      #wrapper
+        = render "layouts/flashes"
+        #container
+          %section#sidebar
+            = render "layouts/sidebar"
+          %section#content
+            = yield
     = render "layouts/footer"
