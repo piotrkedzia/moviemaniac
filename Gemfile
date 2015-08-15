@@ -33,6 +33,7 @@ gem 'pry'
 gem 'pry-rails'
 gem 'pry-byebug'
 gem 'devise'
+gem 'bower-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

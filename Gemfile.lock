@@ -44,6 +44,7 @@ GEM
     aws-sdk-resources (2.1.14)
       aws-sdk-core (= 2.1.14)
     bcrypt (3.1.10)
+    bower-rails (0.10.0)
     builder (3.2.2)
     byebug (5.0.0)
       columnize (= 0.9.0)
@@ -217,6 +218,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk
+  bower-rails
   capybara (= 2.1.0)
   coffee-rails (~> 4.0.0)
   devise
