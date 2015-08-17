@@ -1,6 +1,9 @@
 class Movie < ActiveRecord::Base
 
   has_many :reviews, dependent: :destroy
+  has_many :users, through: :favorites
+  has_many :favorites
+
   RATINGS = %w(G PG PG-13 R NC-17)
 
   validates :title, :released_on, :duration, presence: true
@@ -14,7 +17,7 @@ class Movie < ActiveRecord::Base
   validates_attachment :image,
     :content_type => { :content_type => ['image/jpeg', 'image/png']  },
     :size => { :less_than => 1.megabyte  }
-    
+
   def self.released
     where("released_on <= ?", Time.now).order("released_on desc")
   end
