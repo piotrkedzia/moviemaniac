@@ -7,5 +7,5 @@ Flix::Application.routes.draw do
     resources :reviews
   end
 
-  get "/all_favorites", to: "favorites#all"
+  get "/users/:user_id/favorites", to: "favorites#index", as: "user_favorites"
 end
