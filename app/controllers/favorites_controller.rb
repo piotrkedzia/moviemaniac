@@ -5,4 +5,10 @@ class FavoritesController < ApplicationController
     render "movies/index"
   end
 
+  def toggle
+    current_user.toggle_favorite(params[:movie_id])
+    flash[:notice] = "Favorite toggled!"
+    redirect_to :back
+  end
+
 end

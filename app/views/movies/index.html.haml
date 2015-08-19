@@ -9,8 +9,14 @@
       %article.movie
         %header
           = image_for(movie,:thumb)
-          %h2 #{link_to(movie.title, movie)} (#{(movie.released_on.year)})
-          %p= link_to(pluralize(movie.reviews.size,"review"), movie_reviews_path(movie))
+          %h2
+            #{link_to(movie.title, movie)} (#{(movie.released_on.year)})
+          %p
+            = link_to(pluralize(movie.reviews.size,"review"), movie_reviews_path(movie))
+            | #{movie.users.count} users like it #{link_to("like it too", toggle_favorite_path(movie))}
+            %div.fans
+              - movie.users.each do |user|
+                = user.email
           %h3= movie.cast
         %p
           = truncate(movie.description, length: 150, separator: ' ')
