@@ -4,6 +4,7 @@ ruby '2.2.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 
+gem 'sprockets-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 

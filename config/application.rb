@@ -20,8 +20,13 @@ module Flix
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    config.assets.paths << Rails.root.join("lib", "assets", "bower_components")
-    config.assets.paths << Rails.root.join("vendor", "assets", "bower_components")
+    root.join('vendor', 'assets', 'bower_components').to_s.tap do |bower_path|
+      config.sass.load_paths << bower_path
+      config.assets.paths << bower_path
+    end
+    # Precompile Bootstrap fonts
+    config.assets.precompile << %r(bootstrap-sass/assets/fonts/bootstrap/[\w-]+\.(?:eot|svg|ttf|woff2?)$)
+    # Minimum Sass number precision required by bootstrap-sass
 
 
     I18n.enforce_available_locales = true
