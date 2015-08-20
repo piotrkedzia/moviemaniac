@@ -16,7 +16,7 @@
             | #{movie.users.count} users like it #{link_to("like it too", toggle_favorite_path(movie))}
             %div.fans
               - movie.users.each do |user|
-                = user.email
+                = link_to("<#{user.email.split('@').first}>", user_favorites_path(user))
           %h3= movie.cast
         %p
           = truncate(movie.description, length: 150, separator: ' ')
