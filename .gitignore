@@ -19,3 +19,4 @@ doc/
 .idea
 .secret
 secret_token.rb
+/public
