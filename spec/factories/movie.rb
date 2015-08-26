@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :movie do
     title Faker::Book.title
-    rating { %w(G PG PG-13 R NC-17).values_at(rand(5)) }
-    description Faker::Lorem.sentence(3)
+    rating { %w(G PG PG-13 R NC-17)[(rand(5))] }
+    description Faker::Lorem.sentence(5)
     total_gross Faker::Number.number(10)
     released_on { DateTime.now - rand(20).years }
 
