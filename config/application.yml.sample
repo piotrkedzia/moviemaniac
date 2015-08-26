@@ -1,0 +1,5 @@
+
+# In shell type: rake secret
+# generated key paste below
+secret_key_base: "paste here your secret key"
+

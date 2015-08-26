@@ -34,5 +34,8 @@ module App
     console do
       ActiveRecord::Base.connection
     end
+
+    config.secret_key_base = Figaro.env.secret_key_base
+
   end
 end
