@@ -14,6 +14,5 @@ FactoryGirl.define do
 
     director Faker::Name.name
     duration { "#{Faker::Number.between(85, 250)} min" }
-    image Faker::Avatar.image
   end
 end

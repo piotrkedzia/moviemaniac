@@ -23,11 +23,11 @@ describe "Adding movie to favorites" do
       click_link 'like it too'
 
       expect(page).to have_text('test_user')
-      expect(page).to have_text('1 user like it')
+      expect(page).to have_text('1 user liked it')
 
       click_link 'like it too'
       expect(page).not_to have_text('test_user')
-      expect(page).to have_text('0 users like it')
+      expect(page).not_to have_text('0 users like it')
     end
 
   end
@@ -36,14 +36,14 @@ describe "Adding movie to favorites" do
     describe "when click 'like it'" do
       it "should redirect to login page" do
         visit movies_url
-        click_link 'like it to'
+        click_link 'like it too'
         expect(current_path).to eq(new_user_session_path)
       end
 
       it "should not add movie to favorites" do
         visit movies_url
         expect {
-          click_link 'like it to'
+          click_link 'like it too'
         }.not_to change(Favorite, :count)
       end
     end

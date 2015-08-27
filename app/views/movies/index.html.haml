@@ -12,11 +12,12 @@
           %h2
             #{link_to(movie.title, movie)} (#{(movie.released_on.year)})
           %p
-            = link_to(pluralize(movie.reviews.size,"review"), movie_reviews_path(movie))
-            | #{pluralize(movie.users.count, 'user')} like it #{link_to("like it too", toggle_favorite_path(movie))}
+            = movie.reviews_link
+            | #{movie.fans_count}  #{movie.toggle_favorite_link}
+
             %div.fans
-              - movie.users.each do |user|
-                = link_to("<#{user.email.split('@').first}>", user_favorites_path(user))
+              - movie.fans.each do |fan|
+                = fan
           %h3= movie.cast
         %p
           = truncate(movie.description, length: 150, separator: ' ')
