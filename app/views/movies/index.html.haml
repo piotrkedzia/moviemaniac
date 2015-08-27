@@ -13,9 +13,10 @@
             #{link_to(movie.title, movie)} (#{(movie.released_on.year)})
           %p
             = movie.reviews_link
-            | #{movie.fans_count}  #{movie.toggle_favorite_link}
+            = link_to(movie.fans_count,"#", data: { movie: "movie_#{movie.id}" } )
+            = movie.toggle_favorite_link
 
-            %div.fans
+            %div.fans{:id => "movie_#{movie.id}"}
               - movie.fans.each do |fan|
                 = fan
           %h3= movie.cast

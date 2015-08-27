@@ -46,8 +46,12 @@ class MovieDecorator < Draper::Decorator
     end
   end
 
-  def fans_count
-    "#{h.pluralize(object.users.count, 'user')} liked it" if object.users.count > 0
+  def fans_count 
+    if object.users.count > 0
+      "#{h.pluralize(object.users.count, 'user')} liked it"
+    else
+      ""
+    end
   end
 
   def fans
