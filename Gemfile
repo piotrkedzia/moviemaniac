@@ -36,6 +36,7 @@ gem 'pry-byebug'
 gem 'devise'
 gem 'bower-rails'
 gem 'figaro'
+gem 'draper'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

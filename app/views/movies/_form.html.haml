@@ -30,7 +30,7 @@
         = f.label :image
         = f.file_field :image
       %li
-        = image_for(@movie,:medium)
+        = @movie.image_for(:medium)
     %p
       = f.submit
       = link_to "Cancel", movies_path, class: 'button'

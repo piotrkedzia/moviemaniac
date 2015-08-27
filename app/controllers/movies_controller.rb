@@ -1,18 +1,18 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.released
+    @movies = Movie.released.decorate
   end
 
   def show
-    @movie = Movie.find(params[:id])
+    @movie = Movie.find(params[:id]).decorate
   end
 
   def edit
-    @movie = Movie.find(params[:id])
+    @movie = Movie.find(params[:id]).decorate
   end
 
   def update
-    @movie = Movie.find(params[:id])
+    @movie = Movie.find(params[:id]).decorate
 
     if @movie.update(movie_params)
       redirect_to @movie, notice: "Movie successfully updated!"
@@ -22,12 +22,12 @@ class MoviesController < ApplicationController
   end
 
   def new
-    @movie = Movie.new
+    @movie = Movie.new.decorate
   end
 
   def create
     # Addin new movie
-    @movie = Movie.new(movie_params)
+    @movie = Movie.new(movie_params).decorate
     if @movie.save
       redirect_to @movie, notice: "Movie was successfully created!"
     else

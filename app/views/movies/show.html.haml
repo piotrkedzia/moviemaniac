@@ -1,7 +1,7 @@
 %body
   %article#movie.movie
     %header
-      = image_for(@movie,:medium)
+      = @movie.image_for(:medium)
       %h1= @movie.title
       %h2
         Released: #{@movie.released_on}
@@ -18,10 +18,10 @@
       = @movie.director
     %h3 Total Gross
     %p
-      = format_total_gross(@movie)
+      = @movie.format_total_gross
     %h3 Average review
     %p
-      = format_average_stars(@movie)
+      = @movie.format_average_stars
     %p
     %h3 Recent reviews
     %ol#reviews

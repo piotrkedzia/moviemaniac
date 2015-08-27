@@ -10,7 +10,7 @@ class FavoritesController < ApplicationController
 
     current_user.toggle_favorite(params[:movie_id])
     flash[:notice] = "Favorite toggled!"
-    redirect_to :back
+    redirect_to movies_path
   end
 
 end
