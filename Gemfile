@@ -38,6 +38,7 @@ gem 'bower-rails'
 gem 'figaro'
 gem 'draper'
 gem 'decent_exposure'
+gem 'decent_decoration'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

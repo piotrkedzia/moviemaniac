@@ -1,43 +1,25 @@
 class MoviesController < ApplicationController
-  def index
-    @movies = Movie.released.decorate
-  end
-
-  def show
-    @movie = Movie.find(params[:id]).decorate
-  end
-
-  def edit
-    @movie = Movie.find(params[:id]).decorate
-  end
+  expose_decorated(:movies) { Movie.released }
+  expose_decorated(:movie, attributes: :movie_params)
 
   def update
-    @movie = Movie.find(params[:id]).decorate
-
-    if @movie.update(movie_params)
-      redirect_to @movie, notice: "Movie successfully updated!"
+    if movie.save
+      redirect_to movie, notice: "Movie successfully updated!"
     else
       render :edit
     end
   end
 
-  def new
-    @movie = Movie.new.decorate
-  end
-
   def create
-    # Addin new movie
-    @movie = Movie.new(movie_params).decorate
-    if @movie.save
-      redirect_to @movie, notice: "Movie was successfully created!"
+    if movie.save
+      redirect_to movie, notice: "Movie was successfully created!"
     else
       render :new
     end
   end
 
   def destroy
-    @movie = Movie.find(params[:id])
-    @movie.destroy
+    movie.destroy
     redirect_to movies_path, danger:"Movie was permanently deleated!!!"
   end
 

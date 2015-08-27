@@ -1,5 +1,5 @@
-= form_for(@movie) do |f|
-  = render 'shared/errors', object: @movie
+= form_for(movie) do |f|
+  = render 'shared/errors', object: movie
   %fieldset
     %ol
       %li.required
@@ -30,7 +30,7 @@
         = f.label :image
         = f.file_field :image
       %li
-        = @movie.image_for(:medium)
+        = movie.image_for(:medium)
     %p
       = f.submit
       = link_to "Cancel", movies_path, class: 'button'
