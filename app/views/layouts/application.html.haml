@@ -11,9 +11,11 @@
     .container
       #wrapper
         = render "layouts/flashes"
-        #container
-          %section#sidebar
-            = render "layouts/sidebar"
-          %section#content
-            = yield
+        .row
+          .col-md-2.col-md-offset-1
+            %section
+              = render "layouts/sidebar"
+          .col-md-6
+            %section
+              = yield
     = render "layouts/footer"
