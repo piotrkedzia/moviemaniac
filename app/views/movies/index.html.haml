@@ -1,6 +1,6 @@
-- if @user
+- if user.id
   %div.jumbotron
-    %h2= "#{@user.email} #{'favorite'.pluralize(movies.count)} #{'movies'.pluralize(movies.count)}"
+    %h2= "#{user.name} favorite #{'movies'.pluralize(movies.count)}"
 
 %ul#movies
   - movies.each do |movie|

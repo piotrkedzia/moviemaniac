@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
   expose_decorated(:movies) { Movie.released }
   expose_decorated(:movie, attributes: :movie_params)
+  expose_decorated(:user)
 
   def update
     if movie.save
@@ -24,8 +25,7 @@ class MoviesController < ApplicationController
   end
 
   def user_favorites
-    @user = User.find(params[:user_id])
-    self.movies = @user.movies.decorate
+    self.movies = user.movies.decorate
     render "movies/index"
   end
 
