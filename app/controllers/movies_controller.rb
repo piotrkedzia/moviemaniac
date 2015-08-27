@@ -23,6 +23,20 @@ class MoviesController < ApplicationController
     redirect_to movies_path, danger:"Movie was permanently deleated!!!"
   end
 
+  def user_favorites
+    @user = User.find(params[:user_id])
+    self.movies = @user.movies.decorate
+    render "movies/index"
+  end
+
+  def toggle
+    authenticate_user!
+
+    current_user.toggle_favorite(params[:movie_id])
+    flash[:notice] = "Favorite toggled!"
+    redirect_to movies_path
+  end
+
   private
 
   def movie_params

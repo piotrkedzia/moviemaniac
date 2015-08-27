@@ -7,6 +7,6 @@ App::Application.routes.draw do
     resources :reviews
   end
 
-  get "/favorites/:user_id", to: "favorites#index", as: "user_favorites"
-  get "/favorite/toggle/:movie_id", to: "favorites#toggle", as: "toggle_favorite"
+  get "/favorites/:user_id", to: "movies#user_favorites", as: "user_favorites"
+  get "/favorite/toggle/:movie_id", to: "movies#toggle", as: "toggle_favorite"
 end
