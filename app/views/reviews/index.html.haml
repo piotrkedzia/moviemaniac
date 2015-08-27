@@ -1,15 +1,15 @@
 
 %h1
-  = "#{pluralize(@reviews.size,'Review')} for "
-  = link_to(@movie.title,@movie)
+  = "#{pluralize(reviews.size,'Review')} for "
+  = link_to(movie.title,movie)
 
 %ol#reviews
-  - @reviews.each do |review|
+  - reviews.each do |review|
     %li
       %p
         #{ pluralize(review.stars,'star') } by #{content_tag(:strong, review.name) }
-        = link_to "Edit", edit_movie_review_path(@movie, review)
-        = link_to("Delete ", movie_review_path(@movie,review), method: :delete,  data:{confirm: "Are You sure?"})
+        = link_to "Edit", edit_movie_review_path(movie, review)
+        = link_to("Delete ", movie_review_path(movie,review), method: :delete,  data:{confirm: "Are You sure?"})
         %br
         = "#{review.comment} (#{time_ago_in_words(review.created_at)})"
 

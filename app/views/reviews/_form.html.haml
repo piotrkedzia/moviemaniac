@@ -1,7 +1,7 @@
-= render 'shared/errors', object: @review
+= render 'shared/errors', object: review
 %fieldset
   %ol
-    = form_for([@movie, @review]) do |f|
+    = form_for([movie, review]) do |f|
       %li.required
         = f.label :name
         %br/

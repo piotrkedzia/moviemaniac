@@ -1,47 +1,31 @@
 class ReviewsController < ApplicationController
-  before_action :set_movie
-
-  def index
-    @reviews = @movie.reviews
-  end
-
-  def new
-    @review = @movie.reviews.new
-  end
+  expose(:movie)
+  expose(:reviews, ancestor: :movie)
+  expose(:review, attributes: :review_params)
 
   def create
-    @review = @movie.reviews.new(review_params) 
-    if @review.save
-      redirect_to movie_reviews_path(@movie), notice: "Thanks for your review!"
+    if review.save
+      redirect_to movie_reviews_path(movie), notice: "Thanks for your review!"
     else
       render :new
     end
   end
 
-  def edit
-    @review = Review.find(params[:id])
-  end
-
   def update
-    @review = @movie.reviews.find(params[:id])
-    if @review.update(review_params)
-      redirect_to movie_reviews_path(@movie), notice: "Comment successfully edited"
+    if review.save
+      redirect_to movie_reviews_path(movie), notice: "Comment successfully edited"
     else
       render :edit
     end
   end
 
   def destroy
-    Review.destroy(params[:id])
-    redirect_to movie_reviews_path(@movie), danger: 'Review successfully deleted!!!'
+    review.destroy
+    redirect_to movie_reviews_path(movie), danger: 'Review successfully deleted!!!'
   end
 
   private
   def review_params
     params.require(:review).permit(:name, :stars, :comment)
-  end
-
-  def set_movie
-    @movie = Movie.find(params[:movie_id])
   end
 end
