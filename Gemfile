@@ -39,6 +39,7 @@ gem 'figaro'
 gem 'draper'
 gem 'decent_exposure'
 gem 'decent_decoration'
+gem 'simple_form'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

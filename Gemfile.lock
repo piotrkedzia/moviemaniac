@@ -206,6 +206,9 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     sexp_processor (4.6.0)
+    simple_form (3.1.1)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
     slop (3.6.0)
     sprockets (2.12.4)
       hike (~> 1.2)
@@ -261,6 +264,7 @@ DEPENDENCIES
   rspec-rails (= 2.13.1)
   sass-rails (~> 4.0.2)
   sdoc
+  simple_form
   sprockets-rails
   sqlite3
   test-unit
