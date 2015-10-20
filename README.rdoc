@@ -16,6 +16,6 @@ I've aded few additional features and gems:
 
 * Few JQuery effectcs
 
-## Installation
+== Installation
 
 TODO: Describe the installation process
