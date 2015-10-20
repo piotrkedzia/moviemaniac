@@ -1,28 +1,18 @@
-== README
+== MOVIE MANIAC
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is based on Pragmatic Studio Ruby on Rails level I course: https://pragmaticstudio.com/rails 
 
-Things you may want to cover:
+I've aded few new features and gems:
 
-* Ruby version
+* Upgrade to Ruby on Rails 4.2.2
 
-* System dependencies
+* Authentication with Devise
 
-* Configuration
+* Forms rewriten with Simple Forms
 
-* Database creation
+* View templates rewriten with HAML
 
-* Database initialization
+* View helpers moved to decorators Draper
 
-* How to run the test suite
+* Few JQuery effectcs
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
