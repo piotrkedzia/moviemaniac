@@ -8,12 +8,16 @@ I've aded few additional features and gems:
 
 * Authentication with Devise
 
-* Forms rewriten with Simple Forms
+* Forms rewritten to Simple Forms
 
-* View templates rewriten with HAML
+* View templates rewritten to HAML
 
-* View helpers moved to decorators Draper
+* View helpers moved to proper decorators Draper
 
 * Few JQuery effectcs
+
+Demo on Heroku:
+http://movmaniac.herokuapp.com/
+
 
 
