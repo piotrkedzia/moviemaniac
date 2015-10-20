@@ -2,7 +2,7 @@
 
 This application is based on Pragmatic Studio Ruby on Rails level I course: https://pragmaticstudio.com/rails 
 
-I've aded few new features and gems:
+I've aded few additional features and gems:
 
 * Upgrade to Ruby on Rails 4.2.2
 
@@ -16,3 +16,6 @@ I've aded few new features and gems:
 
 * Few JQuery effectcs
 
+## Installation
+
+TODO: Describe the installation process
