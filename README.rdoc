@@ -17,7 +17,7 @@ I've aded few additional features and gems:
 * Few JQuery effectcs
 
 Demo on Heroku:
-http://movmaniac.herokuapp.com/
+http://movmaniac.herokuapp.com
 
 
 
