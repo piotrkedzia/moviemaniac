@@ -12,11 +12,13 @@ I've aded few additional features and gems:
 
 * View templates rewritten to HAML
 
+* Bootstrap front-end
+
 * View helpers moved to proper decorators Draper
 
 * Few JQuery effectcs
 
-Demo on Heroku:
+Develop server:
 http://movmaniac.herokuapp.com
 
 
