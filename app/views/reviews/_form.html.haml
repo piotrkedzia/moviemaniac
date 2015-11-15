@@ -1,6 +1,6 @@
-= render 'shared/errors', object: review
-%br
 .panel.panel-primary
+  .panel-heading
+    = title
   .panel-body
     = simple_form_for([movie, review]) do |f|
       = f.error_notification
