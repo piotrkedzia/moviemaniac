@@ -32,6 +32,6 @@ describe "Creating a new review" do
       click_button 'Create Review' 
     }.not_to change(Review, :count)
 
-    expect(page).to have_text('error')
+    expect(page).to have_text('Please review the problems below')
   end
 end

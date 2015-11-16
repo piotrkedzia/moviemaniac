@@ -11,6 +11,8 @@
         = link_to "Edit", edit_movie_review_path(movie, review)
         = link_to("Delete ", movie_review_path(movie,review), method: :delete,  data:{confirm: "Are You sure?"})
         %br
-        = "#{review.comment} (#{time_ago_in_words(review.created_at)})"
+        = review.comment
+        %span.created-at
+          = review.created_at
 
 
