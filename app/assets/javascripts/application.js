@@ -15,6 +15,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sass/assets/javascripts/bootstrap.min
+//= require moment
 //= require turbolinks
 //= require_self
 //= require_tree .
