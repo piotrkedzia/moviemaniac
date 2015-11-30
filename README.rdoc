@@ -20,6 +20,10 @@ I've aded few additional features and gems:
 
 * Time ago in words computed by Moment.js
 
+ToDo
+
+* Move images to AWS
+
 Develop server:
 http://movmaniac.herokuapp.com
 
