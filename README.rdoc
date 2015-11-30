@@ -18,6 +18,8 @@ I've aded few additional features and gems:
 
 * Few JQuery effectcs
 
+* Time ago in words computed by Moment.js
+
 Develop server:
 http://movmaniac.herokuapp.com
 
